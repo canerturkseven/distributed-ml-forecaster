@@ -162,6 +162,8 @@ class FeatureExtractor:
         id_col: str,
         date_col: str,
         target_col: str,
+        max_forecast_horizon: int = 1,
+        lags: int = 0,
         lag_window_features: Optional[Dict[str, List[Union[int, List[int]]]]] = None,
         date_features: List[str] = None,
         count_consecutive_values: Optional[
@@ -172,6 +174,7 @@ class FeatureExtractor:
         self.id_col = id_col
         self.date_col = date_col
         self.target_col = target_col
+        self.max_forecast_horizon = max_forecast_horizon
         self.lag_window_features = lag_window_features
         self.date_features = date_features
         self.count_consecutive_values = count_consecutive_values
